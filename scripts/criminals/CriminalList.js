@@ -5,7 +5,7 @@ import {  CriminalHTML  } from './Criminal.js';
 
 
 export const criminalList = () => {
-    debugger
+    // debugger
     getCriminals()
         .then( () => {
         let CriminalHtmlList = ``
