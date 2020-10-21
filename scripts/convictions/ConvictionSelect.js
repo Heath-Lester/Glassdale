@@ -25,21 +25,20 @@ const crimesToHTML = convictionsArray => {
             <option value="0">Please select a crime...</option>
             ${
                 convictionsArray.map(crime => {
-                    const crimeName = crime.name
-                    return `<option>${crimeName}</option>`
-                })
+                    return `<option value="${crime.id}">${crime.name}</option>`
+                }).join("")
             }
         </select>
     `
 }
 
 eventHub.addEventListener("change", event => {
-
+    // debugger
     if (event.target.id === "crimeSelect") {
         
-        const customEvent = new CustomEvent("crimeChosen", {
+        const customEvent = new CustomEvent("crimeSelect", {
             detail: {
-                crimeThatWasChosen: event.target.value
+                crimeThatWasChosen: parseInt(event.target.value)
             }
         })
         eventHub.dispatchEvent(customEvent)
