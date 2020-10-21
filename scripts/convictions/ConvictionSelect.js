@@ -4,15 +4,16 @@ import { useConvictions, getConvictions } from "./ConvictionProvider.js"
 
 // Stores an HTML class in a variable
 const crimeFilterElement = document.querySelector(".filters__crime")
+const eventHub = document.querySelector(".container")
 
 // 
 export const ConvictionSelect = () => {
-    debugger
-    // getConvictions()
-    // .then( () => {
+    
+    getConvictions()
+    .then( () => {
         const convictionsData = useConvictions()
         crimesToHTML(convictionsData)   
-    // })
+    })
     
 }
 
@@ -31,3 +32,16 @@ const crimesToHTML = convictionsArray => {
         </select>
     `
 }
+
+eventHub.addEventListener("change", event => {
+
+    if (event.target.id === "crimeSelect") {
+        
+        const customEvent = new CustomEvent("crimeChosen", {
+            detail: {
+                crimeThatWasChosen: event.target.value
+            }
+        })
+        eventHub.dispatchEvent(customEvent)
+    }
+})

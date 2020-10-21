@@ -2,6 +2,7 @@
 import {  useCriminals, getCriminals  } from './CriminalProvider.js';
 import {  CriminalHTML  } from './Criminal.js';
 
+const eventHub = document.querySelector(".container")
 
 
 export const criminalList = () => {
