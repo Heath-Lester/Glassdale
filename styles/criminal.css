@@ -1,0 +1,16 @@
+
+.criminalCard {
+    display: flex;
+    flex-flow: column wrap;
+    border: dotted black 3px;
+    width: 250px;
+    height: fit-content;
+    padding: 2%;
+    margin: 2%;
+    justify-content: center;
+}
+
+.criminalName {
+    font-size: larger;
+    font-weight: bold;
+}
