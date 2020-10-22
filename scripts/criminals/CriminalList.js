@@ -1,7 +1,8 @@
 
 import { useCriminals, getCriminals } from './CriminalProvider.js';
 import { CriminalHTML } from './Criminal.js';
-import {  useConvictions  } from '../convictions/ConvictionProvider.js'
+import {  useConvictions  } from '../convictions/ConvictionProvider.js';
+import {  useOfficers  } from '../officers/OfficerProvider.js';
 
 const criminalElement = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -27,7 +28,7 @@ const render = criminalListTaco => {
 }
 
 eventHub.addEventListener("crimeSelect", event => {
-    debugger
+    // debugger
     if (event.detail.crimeThatWasChosen !== 0) {
 
         const appStateCriminals = useCriminals()
@@ -46,11 +47,36 @@ eventHub.addEventListener("crimeSelect", event => {
             filteredCriminalsHTML += CriminalHTML(criminal)
             
         }
+        // console.log(filteredCriminalsHTML)
+        render(filteredCriminalsHTML)
+        
+    } 
+     
+})
+
+eventHub.addEventListener("officerSelect", event => {
+    // debugger
+    if (event.detail.officerThatWasChosen !== 0) {
+
+        const appStateCriminals = useCriminals()
+        const appStateOfficers = useOfficers()
+
+        const chosenOfficer = appStateOfficers.find(certainOfficer => {
+            return certainOfficer.id === event.detail.officerThatWasChosen
+        })
+
+        const filteredCriminals = appStateCriminals.filter(criminalObject => {
+            return criminalObject.arrestingOfficer === chosenOfficer.name
+        })
+        
+        let filteredCriminalsHTML = ``
+        for (const criminal of filteredCriminals) {
+            filteredCriminalsHTML += CriminalHTML(criminal)
+            
+        }
         console.log(filteredCriminalsHTML)
         render(filteredCriminalsHTML)
         
-        // criminalElement.innerHTML(filteredCriminalsHTML)
-        // render(filteredCriminals)
     } 
      
 })
