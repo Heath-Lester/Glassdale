@@ -1,7 +1,7 @@
 
 import { useCriminals, getCriminals } from './CriminalProvider.js';
 import { CriminalHTML } from './Criminal.js';
-import {  useConvictions  } from '../convictions/ConvictionProvider.js';
+import {  useConvictions  } from '../convictions/ConvictionProvider.js'
 import {  useOfficers  } from '../officers/OfficerProvider.js';
 
 const criminalElement = document.querySelector(".criminalsContainer")
@@ -28,7 +28,7 @@ const render = criminalListTaco => {
 }
 
 eventHub.addEventListener("crimeSelect", event => {
-    // debugger
+    debugger
     if (event.detail.crimeThatWasChosen !== 0) {
 
         const appStateCriminals = useCriminals()
@@ -47,7 +47,7 @@ eventHub.addEventListener("crimeSelect", event => {
             filteredCriminalsHTML += CriminalHTML(criminal)
             
         }
-        // console.log(filteredCriminalsHTML)
+        console.log(filteredCriminalsHTML)
         render(filteredCriminalsHTML)
         
     } 

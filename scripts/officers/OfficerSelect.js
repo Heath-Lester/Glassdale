@@ -7,9 +7,9 @@ import { getOfficers, useOfficers } from "./OfficerProvider.js";
 const officerFilterElement = document.querySelector(".filters__officer")
 const eventHub = document.querySelector(".container")
 
-
+//
 export const OfficerSelect = () => {
-    // debugger
+    debugger
     getOfficers()
     .then( () => {
         const officerData = useOfficers()

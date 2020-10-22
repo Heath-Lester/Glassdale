@@ -14,7 +14,7 @@ export const getConvictions = () => {
         
         // stores the data set into the variable 'convictions'
         .then( parsedCrimes => {
-            // console.table(parsedCrimes)
+            console.table(parsedCrimes)
             convictions = parsedCrimes
         })
 }
