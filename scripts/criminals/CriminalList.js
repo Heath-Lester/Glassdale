@@ -1,26 +1,26 @@
 
+
 import { useCriminals, getCriminals } from './CriminalProvider.js';
 import { CriminalHTML } from './Criminal.js';
 import {  useConvictions  } from '../convictions/ConvictionProvider.js'
 import {  useOfficers  } from '../officers/OfficerProvider.js';
 
-const criminalElement = document.querySelector(".criminalsContainer")
-const eventHub = document.querySelector(".container")
+
 
 
 export const criminalList = () => {
     // debugger
     getCriminals()
-        .then(() => {
-            let CriminalHtmlList = ``
-            const criminals = useCriminals()
-            for (const criminal of criminals) {
-                CriminalHtmlList += CriminalHTML(criminal)
-            }
-            render(CriminalHtmlList)
-        })
-    
+        .then( () => {
+        let CriminalHtmlList = ``
+        const criminals = useCriminals()
+        for (const criminal of criminals) {
+            CriminalHtmlList += CriminalHTML(criminal)
+        } 
+        document.querySelector(".criminalsContainer").innerHTML += `${CriminalHtmlList}`
+        }) 
 }
+
 
 
 const render = criminalListTaco => {
@@ -80,3 +80,4 @@ eventHub.addEventListener("officerSelect", event => {
     } 
      
 })
+
