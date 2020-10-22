@@ -7,7 +7,7 @@ import { getOfficers, useOfficers } from "./OfficerProvider.js";
 const officerFilterElement = document.querySelector(".filters__officer")
 const eventHub = document.querySelector(".container")
 
-//
+// 
 export const OfficerSelect = () => {
     debugger
     getOfficers()
@@ -39,7 +39,7 @@ eventHub.addEventListener("change", event => {
         
         const customEvent = new CustomEvent("officerSelect", {
             detail: {
-                officerThatWasChosen: parseInt(event.target.value)
+                officerThatWasChosen: event.target.name
             }
         })
         eventHub.dispatchEvent(customEvent)
