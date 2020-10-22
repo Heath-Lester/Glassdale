@@ -1,0 +1,12 @@
+@import "./officer.css";
+@import "./criminal.css";
+
+.criminalsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.officersContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

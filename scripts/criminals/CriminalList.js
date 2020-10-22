@@ -28,7 +28,7 @@ const render = criminalListTaco => {
 }
 
 eventHub.addEventListener("crimeSelect", event => {
-    debugger
+    // debugger
     if (event.detail.crimeThatWasChosen !== 0) {
 
         const appStateCriminals = useCriminals()
@@ -47,7 +47,7 @@ eventHub.addEventListener("crimeSelect", event => {
             filteredCriminalsHTML += CriminalHTML(criminal)
             
         }
-        console.log(filteredCriminalsHTML)
+        // console.log(filteredCriminalsHTML)
         render(filteredCriminalsHTML)
         
     } 
