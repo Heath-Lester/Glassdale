@@ -74,7 +74,7 @@ eventHub.addEventListener("officerSelect", event => {
             filteredCriminalsHTML += CriminalHTML(criminal)
             
         }
-        console.log(filteredCriminalsHTML)
+        // console.log(filteredCriminalsHTML)
         render(filteredCriminalsHTML)
         
     } 
