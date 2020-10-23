@@ -1,10 +1,32 @@
 {
-    "notes": [
-        {
-            "Date":
-            "Author":
-            "Suspect":
-            "Content":
-        }
-    ]
+  "notes": [
+    {
+      "Date": 908712340789,
+      "Author": "Me",
+      "Suspect": "You",
+      "Content": "Through much deliberation I have decided I am you.",
+      "id": 1
+    },
+    {
+      "date": "2020-10-23",
+      "author": "Samuel Jackson",
+      "suspect": "Hannah Montana",
+      "content": "Please, no.",
+      "id": 2
+    },
+    {
+      "date": "2020-10-23",
+      "author": "as;ldkjf",
+      "suspect": "a;sldkfj",
+      "content": "a;sldkfj",
+      "id": 3
+    },
+    {
+      "date": "2020-10-23",
+      "author": "as;ldkjf",
+      "suspect": "a;sldkfj",
+      "content": "a;sldkfj",
+      "id": 4
+    }
+  ]
 }
