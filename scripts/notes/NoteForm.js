@@ -17,7 +17,7 @@ const render = () => {
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", clickEvent => {
     console.log("Click Event")
-    debugger
+    // debugger
 
     if (clickEvent.target.id === "saveNote") {
         
@@ -39,8 +39,6 @@ eventHub.addEventListener("click", clickEvent => {
         saveNote(newNote)
     }
 })
-
-
 
 
 export const NoteForm = () => {

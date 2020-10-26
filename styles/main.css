@@ -1,12 +1,25 @@
 @import "./officer.css";
 @import "./criminal.css";
 
+.criminalContent {
+    display: flex;
+}
+
 .criminalsContainer {
     display: flex;
     flex-wrap: wrap;
+    flex: 4;
+}
+
+.notesContainer {
+    border: solid dotted goldenrod;
+    flex: 1;
 }
 
 .officersContainer {
     display: flex;
     flex-wrap: wrap;
 }
+
+
+
