@@ -16,15 +16,16 @@ export const CriminalHTML = (criminal) => {
 }
 
 eventHub.addEventListener("click", criminalObj => {
-    debugger
+    // debugger
     const [prefix, criminalID] = criminalObj.target.id.split("--")
 
-    if (eventObj.target.id.startsWith("associates--")) {
+    if (criminalObj.target.id.startsWith("associates--")) {
         const AlibiEvent = new CustomEvent("alibiList", {
             detail: {
-                criminalID: criminalID
+                criminalID: parseInt(criminalID)
             }
         })
         eventHub.dispatchEvent(AlibiEvent)
+        console.log(criminalID)
     }
 })
