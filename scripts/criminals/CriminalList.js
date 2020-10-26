@@ -5,7 +5,8 @@ import { CriminalHTML } from './Criminal.js';
 import {  useConvictions  } from '../convictions/ConvictionProvider.js'
 import {  useOfficers  } from '../officers/OfficerProvider.js';
 
-
+const eventHub = document.querySelector(".container")
+const criminalElement = document.querySelector(".criminalsContainer")
 
 
 export const criminalList = () => {
@@ -17,7 +18,7 @@ export const criminalList = () => {
         for (const criminal of criminals) {
             CriminalHtmlList += CriminalHTML(criminal)
         } 
-        document.querySelector(".criminalsContainer").innerHTML += `${CriminalHtmlList}`
+        render(CriminalHtmlList)
         }) 
 }
 
@@ -50,7 +51,10 @@ eventHub.addEventListener("crimeSelect", event => {
         // console.log(filteredCriminalsHTML)
         render(filteredCriminalsHTML)
         
-    } 
+    } else if (event.detail.crimeThatWasChosen === 0) {
+
+        render(criminalList())        
+    }
      
 })
 
@@ -77,7 +81,9 @@ eventHub.addEventListener("officerSelect", event => {
         // console.log(filteredCriminalsHTML)
         render(filteredCriminalsHTML)
         
-    } 
+    } else {
+        render(criminalList())
+    }
      
 })
 
