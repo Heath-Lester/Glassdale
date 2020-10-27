@@ -22,7 +22,7 @@ export const notesList = () => {
 
 eventHub.addEventListener("noteStateChanged", event => {
     console.log("Render Listener Pinged")
-    debugger
+    // debugger
     const updatedNotes = useNotes()
     let noteHtmlList = ``
     for (const note of updatedNotes) {

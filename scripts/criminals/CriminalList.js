@@ -1,9 +1,8 @@
 
-
 import { useCriminals, getCriminals } from './CriminalProvider.js';
 import { CriminalHTML } from './Criminal.js';
-import {  useConvictions  } from '../convictions/ConvictionProvider.js'
-import {  useOfficers  } from '../officers/OfficerProvider.js';
+import { useConvictions } from '../convictions/ConvictionProvider.js'
+import { useOfficers } from '../officers/OfficerProvider.js';
 
 const eventHub = document.querySelector(".container")
 const criminalElement = document.querySelector(".criminalsContainer")
@@ -12,14 +11,14 @@ const criminalElement = document.querySelector(".criminalsContainer")
 export const criminalList = () => {
     // debugger
     getCriminals()
-        .then( () => {
-        let CriminalHtmlList = ``
-        const criminals = useCriminals()
-        for (const criminal of criminals) {
-            CriminalHtmlList += CriminalHTML(criminal)
-        } 
-        render(CriminalHtmlList)
-        }) 
+        .then(() => {
+            let CriminalHtmlList = ``
+            const criminals = useCriminals()
+            for (const criminal of criminals) {
+                CriminalHtmlList += CriminalHTML(criminal)
+            }
+            render(CriminalHtmlList)
+        })
 }
 
 
@@ -42,20 +41,20 @@ eventHub.addEventListener("crimeSelect", event => {
         const filteredCriminals = appStateCriminals.filter(criminalObject => {
             return criminalObject.conviction === chosenConviction.name
         })
-        
+
         let filteredCriminalsHTML = ``
         for (const criminal of filteredCriminals) {
             filteredCriminalsHTML += CriminalHTML(criminal)
-            
+
         }
         // console.log(filteredCriminalsHTML)
         render(filteredCriminalsHTML)
-        
+
     } else if (event.detail.crimeThatWasChosen === 0) {
 
-        render(criminalList())        
+        render(criminalList())
     }
-     
+
 })
 
 eventHub.addEventListener("officerSelect", event => {
@@ -72,18 +71,18 @@ eventHub.addEventListener("officerSelect", event => {
         const filteredCriminals = appStateCriminals.filter(criminalObject => {
             return criminalObject.arrestingOfficer === chosenOfficer.name
         })
-        
+
         let filteredCriminalsHTML = ``
         for (const criminal of filteredCriminals) {
             filteredCriminalsHTML += CriminalHTML(criminal)
-            
+
         }
         // console.log(filteredCriminalsHTML)
         render(filteredCriminalsHTML)
-        
+
     } else {
         render(criminalList())
     }
-     
+
 })
 
