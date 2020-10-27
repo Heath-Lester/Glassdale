@@ -8,7 +8,7 @@ eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "witnesses") {
         const customEvent = new CustomEvent("witnessClick")
 
-        console.log("witnessEvent")
+        console.log(customEvent)
         eventHub.dispatchEvent(customEvent)
     }
 })

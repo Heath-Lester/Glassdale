@@ -5,8 +5,10 @@ import { witnessCard } from './witness.js';
 const eventHub = document.querySelector(".container")
 const witnessElement = document.querySelector(".criminalsContainer")
 
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "witnessClick") {
+eventHub.addEventListener("witnessClick", clickEvent => {
+    debugger
+    // if (clickEvent.target.id === "witnessClick") {
+        console.log("witness reciever pinged")
         getWitnesses()
             .then(() => {
                 let witnessHTMLstring = ``
@@ -14,6 +16,11 @@ eventHub.addEventListener("click", clickEvent => {
                 for (const individual of witnesses) {
                     witnessHTMLstring += witnessCard(individual)
                 }
+                render(witnessHTMLstring)
             })
-    }
+    // }
 })
+
+const render = (taco) => {
+    witnessElement.innerHTML = taco
+}
