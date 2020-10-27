@@ -6,8 +6,7 @@ const eventHub = document.querySelector(".container")
 const witnessElement = document.querySelector(".criminalsContainer")
 
 eventHub.addEventListener("witnessClick", clickEvent => {
-    debugger
-    // if (clickEvent.target.id === "witnessClick") {
+    // debugger
         console.log("witness reciever pinged")
         getWitnesses()
             .then(() => {
@@ -18,7 +17,6 @@ eventHub.addEventListener("witnessClick", clickEvent => {
                 }
                 render(witnessHTMLstring)
             })
-    // }
 })
 
 const render = (taco) => {

@@ -2,7 +2,6 @@
 let witnessArray = []
 
 export const useWitnesses = () => {
-    debugger
     return witnessArray.slice()    
 }
 
