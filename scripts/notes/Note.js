@@ -1,11 +1,9 @@
 
-export const notesToHTML = (note) => {
+export const notesToHTML = (note, criminal) => {
     return `
-    <div class="note" id="note--${note.id}">
-        <dt class"note__date">Date:${note.date}</dt>
-        <dt class"note__author">Author:${note.author}</dt>
-        <dt class"note__suspect">Suspect:${note.suspect}</dt>
-        <p class"note__content">${note.content}</p>
+    <div class="note" id="note--${note.id}: ${note.criminalId}">
+        <h4>Note on ${criminal.name}:</h4>
+        <dt class"note__text">${note.text}</dt>
     </div>
     `
 }
