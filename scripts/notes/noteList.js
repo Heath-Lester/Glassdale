@@ -1,6 +1,6 @@
 
 import { getCriminals, useCriminals } from "../criminals/CriminalProvider.js"
-import { getNotes, useNotes } from "./NoteProvider.js"
+import { deleteNote, getNotes, useNotes } from "./NoteProvider.js"
 import { notesToHTML } from "./Note.js"
 
 
@@ -18,12 +18,12 @@ export const notesList = () => {
             const notes = useNotes()
             const criminalsArray = useCriminals()
             // debugger
-                for (const note of notes) {
-                    let criminal = criminalsArray.find(criminal => { return criminal.id === parseInt(note.criminalId)})
-                    noteHtmlList += notesToHTML(note, criminal)
-                }
-                render(noteHtmlList)
+            for (const note of notes) {
+                let criminal = criminalsArray.find(criminal => { return criminal.id === parseInt(note.criminalId) })
+                noteHtmlList += notesToHTML(note, criminal)
             }
+            render(noteHtmlList)
+        }
         )
 
 }
@@ -32,12 +32,12 @@ export const notesList = () => {
 
 eventHub.addEventListener("noteStateChanged", event => {
     console.log("Render Listener Pinged")
-    debugger
+    // debugger
     let noteHtmlList = ``
     const updatedNotes = useNotes()
     const criminalsArray = useCriminals()
     for (const note of updatedNotes) {
-        let criminal = criminalsArray.find(criminal => { return criminal.id === parseInt(note.criminalId)})
+        let criminal = criminalsArray.find(criminal => { return criminal.id === parseInt(note.criminalId) })
         noteHtmlList += notesToHTML(note, criminal)
         render(noteHtmlList)
     }
@@ -47,6 +47,16 @@ eventHub.addEventListener("noteStateChanged", event => {
 const render = string => {
     notesElement.innerHTML = `<label class="formLabel">Notes</label>${string}`
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        // debugger
+        const [prefix, id] = clickEvent.target.id.split("--")
+        deleteNote(id).then(() => {
+            notesList()
+        })
+    }
+})
 
 
 // \/ \/ \/ OLD VERSION \/ \/ \/
