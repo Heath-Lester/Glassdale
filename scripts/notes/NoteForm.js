@@ -28,7 +28,7 @@ const renderNoteForm = () => {
 
 // Handle browser-generated click event in component
 eventHub.addEventListener("click", clickEvent => {
-    console.log("Click Event")
+    // console.log("Click Event")
     // debugger
 
     if (clickEvent.target.id === "saveNote") {
