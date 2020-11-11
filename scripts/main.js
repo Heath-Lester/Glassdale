@@ -9,7 +9,7 @@ import { NoteForm } from './notes/NoteForm.js';
 import "./witnesses/witnessButton.js";
 import "./witnesses/witnessList.js";
 import "./criminals/AlibisList.js";
-
+import "./facility/FacilityList.js"
 
 criminalList()
 officerList()

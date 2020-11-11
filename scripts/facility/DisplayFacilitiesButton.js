@@ -9,7 +9,7 @@ export const facilityButton = () => {
 }
 
 eventHub.addEventListener("click", clickEvent => {
-    if(clickEvent.target.id = "facilities") {
+    if(clickEvent.target.id === "facilities") {
     const facilityEvent = new CustomEvent("facilityButton")
 
     console.log("Facility Button Pinged")
