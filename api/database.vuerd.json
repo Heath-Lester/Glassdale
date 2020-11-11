@@ -1,0 +1,554 @@
+{
+  "canvas": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 0,
+    "scrollLeft": 3.6000001430511475,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    }
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "Facilities",
+        "comment": "prison facilities",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "780be489-525d-a6c8-7cd7-013a84c849d2"
+          },
+          {
+            "name": "facilityName",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 73,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "7ebef0ed-7030-734e-7333-f323d6e17cb9"
+          },
+          {
+            "name": "securityLevel",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 78,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "682a0d12-9854-511a-96f2-ce766e65ea8c"
+          },
+          {
+            "name": "capacity",
+            "comment": "",
+            "dataType": "BIGINT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "212ec1e8-7cad-e4d3-84c7-17505982631b"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 173.59999937057523,
+          "top": 190.00000214576679,
+          "zIndex": 176,
+          "widthName": 60,
+          "widthComment": 87
+        },
+        "id": "7e4986b8-d8fd-6303-1917-0485feefa63a"
+      },
+      {
+        "name": "Criminal Facilities",
+        "comment": "facilities crimianals assigned",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "49d36583-69d3-ecd2-6ba0-5432dce106bd"
+          },
+          {
+            "name": "criminalId",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "01495e16-cc53-e04c-9629-d9f7086d86c2"
+          },
+          {
+            "name": "facilityId",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "3414e53a-a13f-9296-fac2-2d2cc0a61ccf"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 186.7999996852874,
+          "top": 515.2000098991404,
+          "zIndex": 174,
+          "widthName": 104,
+          "widthComment": 166
+        },
+        "id": "69c73dd5-2590-9908-558c-f1361ad6255e"
+      },
+      {
+        "name": "Criminals",
+        "comment": "Individual Inmates",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "cfc4cc4b-a877-cf23-4c54-2936c5fa2b5b"
+          },
+          {
+            "name": "age",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c845ccf8-9863-e0cb-4126-ac25580c725a"
+          },
+          {
+            "name": "eyeColor",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "b0d7f784-2ffa-d8e1-32f6-5f418736c4fe"
+          },
+          {
+            "name": "name",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "6d1c4025-da95-7bf6-ba55-c444627278a0"
+          },
+          {
+            "name": "workHistory",
+            "comment": "",
+            "dataType": "BLOB",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 70,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "18ebaff7-b18a-b1ac-eb1e-6ade1298bf67"
+          },
+          {
+            "name": "phone",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "1fb2d7f7-a92f-09fb-783a-6a41689a9790"
+          },
+          {
+            "name": "address",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "4879e66e-e921-5d7c-d4a8-03dd702b505e"
+          },
+          {
+            "name": "incarceration",
+            "comment": "",
+            "dataType": "DATE",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 76,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ad1beefb-49f8-72cb-9a5f-fc8ad33f4635"
+          },
+          {
+            "name": "conviction",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "f007e055-08f9-94f2-b543-9ef5c5d5b80f"
+          },
+          {
+            "name": "arrestingOfficer",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 91,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "d3683df2-2a89-a606-2182-ef95c87752a0"
+          },
+          {
+            "name": "known_associates",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 109,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "5431276f-25ed-91cc-539b-94df9f824372"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 732.8000127029421,
+          "top": 432.4000079250335,
+          "zIndex": 163,
+          "widthName": 60,
+          "widthComment": 106
+        },
+        "id": "8f766aba-6b3b-ef25-6290-aa5d2e7dbb29"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "start": {
+          "tableId": "8f766aba-6b3b-ef25-6290-aa5d2e7dbb29",
+          "columnIds": [
+            "cfc4cc4b-a877-cf23-4c54-2936c5fa2b5b"
+          ],
+          "x": 732.8000127029421,
+          "y": 579.6500079250335,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "69c73dd5-2590-9908-558c-f1361ad6255e",
+          "columnIds": [
+            "01495e16-cc53-e04c-9629-d9f7086d86c2"
+          ],
+          "x": 533.7999996852874,
+          "y": 580.4500098991404,
+          "direction": "right"
+        },
+        "id": "795587a8-9476-4fba-38f1-a479768165ec",
+        "relationshipType": "N"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "7e4986b8-d8fd-6303-1917-0485feefa63a",
+          "columnIds": [
+            "780be489-525d-a6c8-7cd7-013a84c849d2"
+          ],
+          "x": 358.09999937057523,
+          "y": 341.00000214576676,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "69c73dd5-2590-9908-558c-f1361ad6255e",
+          "columnIds": [
+            "3414e53a-a13f-9296-fac2-2d2cc0a61ccf"
+          ],
+          "x": 360.2999996852874,
+          "y": 515.2000098991404,
+          "direction": "top"
+        },
+        "id": "33bfc3ad-943d-b687-2319-7c75fc49173c",
+        "relationshipType": "N"
+      }
+    ]
+  }
+}

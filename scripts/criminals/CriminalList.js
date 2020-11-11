@@ -3,30 +3,54 @@ import { useCriminals, getCriminals } from './CriminalProvider.js';
 import { CriminalHTML } from './Criminal.js';
 import { useConvictions } from '../convictions/ConvictionProvider.js'
 import { useOfficers } from '../officers/OfficerProvider.js';
+import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js';
+import { getFacilitites, useFacilitites } from '../facility/FacilityProvider.js';
+
 
 const eventHub = document.querySelector(".container")
 const criminalElement = document.querySelector(".criminalsContainer")
 
 
+// Renders Criminals to the DOM.
 export const criminalList = () => {
     // debugger
     getCriminals()
+        .then(getCriminalFacilities)
+        .then(getFacilitites)
         .then(() => {
+            // debugger
             let CriminalHtmlList = ``
             const criminals = useCriminals()
-            for (const criminal of criminals) {
-                CriminalHtmlList += CriminalHTML(criminal)
-            }
-            render(CriminalHtmlList)
+            const facilities = useFacilitites()
+            const criminalFacilities = useCriminalFacilities()
+
+            // fix render to account for facilities
+            // for (const criminal of criminals) {
+            //     CriminalHtmlList += CriminalHTML(criminal)
+            // }
+            render(criminals, facilities, criminalFacilities)
         })
 }
 
 
 
-const render = criminalListTaco => {
-    criminalElement.innerHTML = criminalListTaco
+// Renders an argument to an HTML element.
+const render = (criminalListTaco, facilityListTaco, facilityBridgeTaco) => {
+
+    criminalElement.innerHTML = criminalListTaco.map(
+        (criminalTaco) => {
+            const facilityCriminalRelationship = facilityBridgeTaco.filter( bridgeTaco => bridgeTaco.criminalId === criminalTaco.id )
+            const facilities = facilityCriminalRelationship.map( facilityTaco => {
+                const matchingFacility = facilityListTaco.find(facility => facility.id === facilityTaco.facilityId)
+                return matchingFacility
+            })
+            return CriminalHTML(criminalTaco, facilities)
+        }
+    ).join("")
 }
 
+
+// Reacts to the 'crimeSelect' event and returns a filtered criminal list based on convictions.
 eventHub.addEventListener("crimeSelect", event => {
     // debugger
     if (event.detail.crimeThatWasChosen !== 0) {
@@ -57,6 +81,7 @@ eventHub.addEventListener("crimeSelect", event => {
 
 })
 
+// Reacts to the 'officerSelect' event and returns a filtered criminal list based on the arresting officer.
 eventHub.addEventListener("officerSelect", event => {
     // debugger
     if (event.detail.officerThatWasChosen !== 0) {
