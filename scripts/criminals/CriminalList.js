@@ -1,10 +1,10 @@
 
-import { useCriminals, getCriminals } from './CriminalProvider.js';
-import { CriminalHTML } from './Criminal.js';
-import { useConvictions } from '../convictions/ConvictionProvider.js'
-import { useOfficers } from '../officers/OfficerProvider.js';
 import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js';
 import { getFacilitites, useFacilitites } from '../facility/FacilityProvider.js';
+import { useConvictions } from '../convictions/ConvictionProvider.js';
+import { useCriminals, getCriminals } from './CriminalProvider.js';
+import { useOfficers } from '../officers/OfficerProvider.js';
+import { CriminalHTML } from './Criminal.js';
 
 
 const eventHub = document.querySelector(".container")

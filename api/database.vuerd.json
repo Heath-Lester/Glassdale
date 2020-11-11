@@ -2,8 +2,8 @@
   "canvas": {
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": 3.6000001430511475,
+    "scrollTop": 1.2000000476837158,
+    "scrollLeft": 120,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -171,29 +171,6 @@
             "id": "49d36583-69d3-ecd2-6ba0-5432dce106bd"
           },
           {
-            "name": "criminalId",
-            "comment": "",
-            "dataType": "INT",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "01495e16-cc53-e04c-9629-d9f7086d86c2"
-          },
-          {
             "name": "facilityId",
             "comment": "",
             "dataType": "INT",
@@ -215,13 +192,36 @@
               "widthDefault": 60
             },
             "id": "3414e53a-a13f-9296-fac2-2d2cc0a61ccf"
+          },
+          {
+            "name": "criminalId",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "178a75e3-98dc-e61c-e2af-8bd5fa8f2947"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 186.7999996852874,
           "top": 515.2000098991404,
-          "zIndex": 174,
+          "zIndex": 208,
           "widthName": 104,
           "widthComment": 166
         },
@@ -252,7 +252,7 @@
               "widthDataType": 60,
               "widthDefault": 60
             },
-            "id": "cfc4cc4b-a877-cf23-4c54-2936c5fa2b5b"
+            "id": "ebdb738d-5f01-03da-713a-3d2240f94b0c"
           },
           {
             "name": "age",
@@ -470,7 +470,7 @@
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": false
+              "notNull": true
             },
             "ui": {
               "active": false,
@@ -489,7 +489,7 @@
           "active": false,
           "left": 732.8000127029421,
           "top": 432.4000079250335,
-          "zIndex": 163,
+          "zIndex": 205,
           "widthName": 60,
           "widthComment": 106
         },
@@ -503,29 +503,6 @@
   },
   "relationship": {
     "relationships": [
-      {
-        "identification": false,
-        "start": {
-          "tableId": "8f766aba-6b3b-ef25-6290-aa5d2e7dbb29",
-          "columnIds": [
-            "cfc4cc4b-a877-cf23-4c54-2936c5fa2b5b"
-          ],
-          "x": 732.8000127029421,
-          "y": 579.6500079250335,
-          "direction": "left"
-        },
-        "end": {
-          "tableId": "69c73dd5-2590-9908-558c-f1361ad6255e",
-          "columnIds": [
-            "01495e16-cc53-e04c-9629-d9f7086d86c2"
-          ],
-          "x": 533.7999996852874,
-          "y": 580.4500098991404,
-          "direction": "right"
-        },
-        "id": "795587a8-9476-4fba-38f1-a479768165ec",
-        "relationshipType": "N"
-      },
       {
         "identification": false,
         "start": {
@@ -547,6 +524,29 @@
           "direction": "top"
         },
         "id": "33bfc3ad-943d-b687-2319-7c75fc49173c",
+        "relationshipType": "N"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "8f766aba-6b3b-ef25-6290-aa5d2e7dbb29",
+          "columnIds": [
+            "ebdb738d-5f01-03da-713a-3d2240f94b0c"
+          ],
+          "x": 732.8000127029421,
+          "y": 579.6500079250335,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "69c73dd5-2590-9908-558c-f1361ad6255e",
+          "columnIds": [
+            "178a75e3-98dc-e61c-e2af-8bd5fa8f2947"
+          ],
+          "x": 533.7999996852874,
+          "y": 580.4500098991404,
+          "direction": "right"
+        },
+        "id": "252dcdc3-a484-400c-41c9-11be259606c5",
         "relationshipType": "N"
       }
     ]
