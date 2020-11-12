@@ -3,7 +3,7 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": 0,
-    "scrollLeft": 49.20000076293945,
+    "scrollLeft": 0,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -18,9 +18,9 @@
     "database": "MySQL",
     "databaseName": "",
     "canvasType": "ERD",
-    "language": "GraphQL",
+    "language": "JPA",
     "tableCase": "pascalCase",
-    "columnCase": "camelCase",
+    "columnCase": "pascalCase",
     "setting": {
       "relationshipDataTypeSync": true,
       "columnOrder": [
@@ -137,7 +137,7 @@
           "active": false,
           "left": 173.59999937057523,
           "top": 190.00000214576679,
-          "zIndex": 176,
+          "zIndex": 323,
           "widthName": 60,
           "widthComment": 87
         },
@@ -489,11 +489,278 @@
           "active": false,
           "left": 732.8000127029421,
           "top": 432.4000079250335,
-          "zIndex": 205,
+          "zIndex": 255,
           "widthName": 60,
           "widthComment": 106
         },
         "id": "8f766aba-6b3b-ef25-6290-aa5d2e7dbb29"
+      },
+      {
+        "name": "Officers",
+        "comment": "arresting officers",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ac3edac7-8b60-0c7e-dfdf-196c587435c6"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 755.6000132465365,
+          "top": 767.2000308227522,
+          "zIndex": 225,
+          "widthName": 60,
+          "widthComment": 98
+        },
+        "id": "1b556d7b-b47d-0812-d4bc-2e6ae4fc07f2"
+      },
+      {
+        "name": "notes",
+        "comment": "local json",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "07e03660-9008-37f3-9ef5-00667ed104b4"
+          },
+          {
+            "name": "crimianlId",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "81ca0105-da7a-9dbc-17ea-0a29bae2b094"
+          },
+          {
+            "name": "text",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "1e41cd2d-b715-4b61-8217-94b14bc3eeb1"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 756.8000125789658,
+          "top": 193.6000001621239,
+          "zIndex": 311,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "id": "aaded3a3-6d3e-32e3-a669-2e3e43c9dcdf"
+      },
+      {
+        "name": "witnesses",
+        "comment": "witness testimony",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "84e72354-ffa5-b9e1-227b-4299471b6c98"
+          },
+          {
+            "name": "name",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "d2f09765-df2c-45e4-5dd7-6372099c461d"
+          },
+          {
+            "name": "statements",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "8e986738-55ea-31e6-1ab2-7a3f6f2885a8"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 169.99999932289148,
+          "top": 742.0000153827654,
+          "zIndex": 309,
+          "widthName": 60,
+          "widthComment": 104
+        },
+        "id": "f9da8266-1157-85c1-2642-de94d44a85f4"
+      },
+      {
+        "name": "crime",
+        "comment": "crimes commited by criminals",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "bf7ec131-cd5f-407f-971f-4095311f6a1b"
+          },
+          {
+            "name": "name",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 64,
+              "widthDefault": 60
+            },
+            "id": "3fdf8b90-b8e0-3c16-0266-1d143d824b22"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 173.59999940872208,
+          "top": 935.2000199890128,
+          "zIndex": 310,
+          "widthName": 60,
+          "widthComment": 172
+        },
+        "id": "718323be-885f-9fde-b091-378561975e98"
       }
     ],
     "indexes": []
@@ -548,6 +815,29 @@
         },
         "id": "252dcdc3-a484-400c-41c9-11be259606c5",
         "relationshipType": "N"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "8f766aba-6b3b-ef25-6290-aa5d2e7dbb29",
+          "columnIds": [
+            "ebdb738d-5f01-03da-713a-3d2240f94b0c"
+          ],
+          "x": 932.8000127029421,
+          "y": 432.4000079250335,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "aaded3a3-6d3e-32e3-a669-2e3e43c9dcdf",
+          "columnIds": [
+            "81ca0105-da7a-9dbc-17ea-0a29bae2b094"
+          ],
+          "x": 932.3000125789658,
+          "y": 324.10000016212393,
+          "direction": "bottom"
+        },
+        "id": "019db6b2-9c30-23f5-c96a-de481b075fe3",
+        "relationshipType": "ZeroOneN"
       }
     ]
   }

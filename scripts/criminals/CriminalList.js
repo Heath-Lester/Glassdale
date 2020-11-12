@@ -10,6 +10,11 @@ import { CriminalHTML } from './Criminal.js';
 const eventHub = document.querySelector(".container")
 const criminalElement = document.querySelector(".criminalsContainer")
 
+let officers = []
+let criminals = []
+let facilities = []
+let convictions = []
+let criminalFacilities = []
 
 // Renders Criminals to the DOM.
 export const criminalList = () => {
@@ -19,32 +24,32 @@ export const criminalList = () => {
         .then(getFacilities)
         .then(() => {
             // debugger
-            let CriminalHtmlList = ``
-            const criminals = useCriminals()
-            const facilities = useFacilities()
-            const criminalFacilities = useCriminalFacilities()
+            // let CriminalHtmlList = ``
+            criminals = useCriminals()
+            facilities = useFacilities()
+            criminalFacilities = useCriminalFacilities()
 
             // fix render to account for facilities
             // for (const criminal of criminals) {
             //     CriminalHtmlList += CriminalHTML(criminal)
             // }
-            render(criminals, facilities, criminalFacilities)
+            render()
         })
 }
 
 
 
 // Renders an argument to an HTML element.
-const render = (criminalListTaco, facilityListTaco, facilityBridgeTaco) => {
-
-    criminalElement.innerHTML = criminalListTaco.map(
+const render = () => {
+    // debugger
+    criminalElement.innerHTML = criminals.map(
         (criminalTaco) => {
-            const facilityCriminalRelationship = facilityBridgeTaco.filter( bridgeTaco => bridgeTaco.criminalId === criminalTaco.id )
-            const facilities = facilityCriminalRelationship.map( facilityTaco => {
-                const matchingFacility = facilityListTaco.find(facility => facility.id === facilityTaco.facilityId)
+            const facilityCriminalRelationship = criminalFacilities.filter( bridgeTaco => bridgeTaco.criminalId === criminalTaco.id )
+            const filteredFacilities = facilityCriminalRelationship.map( facilityTaco => {
+                const matchingFacility = facilities.find(facility => facility.id === facilityTaco.facilityId)
                 return matchingFacility
             })
-            return CriminalHTML(criminalTaco, facilities)
+            return CriminalHTML(criminalTaco, filteredFacilities)
         }
     ).join("")
 }
@@ -55,28 +60,28 @@ eventHub.addEventListener("crimeSelect", event => {
     // debugger
     if (event.detail.crimeThatWasChosen !== 0) {
 
-        const appStateCriminals = useCriminals()
-        const appStateConvictions = useConvictions()
+        criminals = useCriminals()
+        convictions = useConvictions()
 
-        const chosenConviction = appStateConvictions.find(certainConviction => {
+        const chosenConviction = convictions.find(certainConviction => {
             return certainConviction.id === event.detail.crimeThatWasChosen
         })
 
-        const filteredCriminals = appStateCriminals.filter(criminalObject => {
+        criminals = criminals.filter(criminalObject => {
             return criminalObject.conviction === chosenConviction.name
         })
 
-        let filteredCriminalsHTML = ``
-        for (const criminal of filteredCriminals) {
-            filteredCriminalsHTML += CriminalHTML(criminal)
+        // let filteredCriminalsHTML = ``
+        // for (const criminal of filteredCriminals) {
+        //     filteredCriminalsHTML += CriminalHTML(criminal)
 
-        }
+        // }
         // console.log(filteredCriminalsHTML)
-        render(filteredCriminalsHTML)
+        render()
 
     } else if (event.detail.crimeThatWasChosen === 0) {
 
-        render(criminalList())
+        criminalList()
     }
 
 })
@@ -86,27 +91,27 @@ eventHub.addEventListener("officerSelect", event => {
     // debugger
     if (event.detail.officerThatWasChosen !== 0) {
 
-        const appStateCriminals = useCriminals()
-        const appStateOfficers = useOfficers()
+        criminals = useCriminals()
+        officers = useOfficers()
 
-        const chosenOfficer = appStateOfficers.find(certainOfficer => {
+        const chosenOfficer = officers.find(certainOfficer => {
             return certainOfficer.id === event.detail.officerThatWasChosen
         })
 
-        const filteredCriminals = appStateCriminals.filter(criminalObject => {
+        criminals = criminals.filter(criminalObject => {
             return criminalObject.arrestingOfficer === chosenOfficer.name
         })
 
-        let filteredCriminalsHTML = ``
-        for (const criminal of filteredCriminals) {
-            filteredCriminalsHTML += CriminalHTML(criminal)
+        // let filteredCriminalsHTML = ``
+        // for (const criminal of filteredCriminals) {
+        //     filteredCriminalsHTML += CriminalHTML(criminal)
 
-        }
+        // }
         // console.log(filteredCriminalsHTML)
-        render(filteredCriminalsHTML)
+        render()
 
     } else {
-        render(criminalList())
+        criminalList()
     }
 
 })
