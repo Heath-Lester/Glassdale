@@ -20,10 +20,12 @@ eventHub.addEventListener("alibiList", alibiObj=> {
 
 
 const render = (criminal) => {
+    // debugger
     const alibiElement = document.querySelector(`#criminal--${criminal.id}`)
 
-    alibiElement.innerHTML += `
-    <div class="alibi__list">
+    if (alibiElement.childElementCount === 9) {
+        alibiElement.innerHTML += `
+    <div class="alibi__list--${criminal.id}">
         ${criminal.known_associates.map(alibiObj => {
             return `
                 <br>
@@ -33,4 +35,20 @@ const render = (criminal) => {
         }).join("")}
     </div>
     `
+    } else {
+        const listElement = document.querySelector(`.alibi__list--${criminal.id}`)
+        listElement.parentNode.removeChild(listElement)
+    }
 }
+
+// alibiElement.innerHTML += `
+// <div class="alibi__list">
+//     ${criminal.known_associates.map(alibiObj => {
+//         return `
+//             <br>
+//             <dt>Associate: ${alibiObj.name}</dt>
+//             <dt>Alibi: ${alibiObj.alibi}</p>
+//         `
+//     }).join("")}
+// </div>
+// `
