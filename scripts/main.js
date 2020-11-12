@@ -7,9 +7,10 @@ import { officerList } from './officers/OfficerList.js';
 import { notesList } from  './notes/noteList.js';
 import { NoteForm } from './notes/NoteForm.js';
 import "./witnesses/witnessButton.js";
+import "./criminals/CriminalList.js";
 import "./witnesses/witnessList.js";
+import "./facility/FacilityList.js";
 import "./criminals/AlibisList.js";
-import "./facility/FacilityList.js"
 
 criminalList()
 officerList()
