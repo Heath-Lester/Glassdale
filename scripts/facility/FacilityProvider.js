@@ -1,9 +1,9 @@
 
 let facilities = []
 
-export const useFacilitites = () => facilities.slice()
+export const useFacilities = () => facilities.slice()
 
-export const getFacilitites = () => {
+export const getFacilities = () => {
     return fetch("https://criminals.glassdale.us/facilities")
         .then(taco => taco.json())
         .then( taco => {facilities = taco})

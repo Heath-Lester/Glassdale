@@ -1,4 +1,5 @@
 
+import { facilityButton } from './facility/DisplayFacilitiesButton.js';
 import { ConvictionSelect } from './convictions/ConvictionSelect.js';
 import { OfficerSelect } from './officers/OfficerSelect.js';
 import { criminalList } from './criminals/CriminalList.js';
@@ -8,7 +9,7 @@ import { NoteForm } from './notes/NoteForm.js';
 import "./witnesses/witnessButton.js";
 import "./witnesses/witnessList.js";
 import "./criminals/AlibisList.js";
-
+import "./facility/FacilityList.js"
 
 criminalList()
 officerList()
@@ -16,3 +17,4 @@ ConvictionSelect()
 OfficerSelect()
 NoteForm()
 notesList()
+facilityButton()
